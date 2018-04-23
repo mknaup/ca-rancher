@@ -1,5 +1,3 @@
-# Login via user trainingNN on Logon-Server to the private IP of the first server with user linux
-
 # Optional if user linux is part of group docker
 sudo su -
 
