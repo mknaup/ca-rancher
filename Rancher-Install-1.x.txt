@@ -1,0 +1,7 @@
+# Login via user trainingNN on Logon-Server to the private IP of the first server with user linux
+
+# Optional if user linux is part of group docker
+sudo su -
+
+# Install and run the management server
+docker run -d --restart=unless-stopped -p 8080:8080 rancher/server:stable

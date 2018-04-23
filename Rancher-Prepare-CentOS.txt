@@ -1,0 +1,35 @@
+VM General Purpose, 2 vCPU, 4 GB RAM, CentOS 7 latest
+SSH-Key trainingNN
+
+# Repeat for all hosts of the cluster
+
+# Login via user trainingNN on Logon-Server to the private IP with user linux
+ssh linux@192.168.254.xyz
+
+# Become root
+sudo su -
+
+# Update system
+yum -y update
+
+# Install Docker in a supported release
+# Info for 1.x: https://rancher.com/docs/rancher/latest/en/hosts/#supported-docker-versions
+# Info for 2.0: https://rancher.com/docs/rancher/v2.0/en/quick-start-guide/#host-and-node-requirements
+curl https://releases.rancher.com/install-docker/17.03.sh | sh
+
+# Allow Docker access to user linux
+usermod -aG docker linux
+
+# Automatically start Docker
+systemctl enable docker
+
+# Disable Firewall
+# Info for 1.x: https://rancher.com/docs/rancher/latest/en/hosts/custom/#security-groupsfirewalls
+# Info for 2.0: https://rancher.com/docs/rancher/v2.0/en/quick-start-guide/#port-requirements
+systemctl disable firewalld
+
+# Just to make sure everything is up to date
+reboot
+
+
+# Repeat for all hosts of the cluster
