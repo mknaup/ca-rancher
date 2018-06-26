@@ -6,7 +6,7 @@ yum -y update
 
 # Install Docker in a supported release
 # Info for 1.x: https://rancher.com/docs/rancher/latest/en/hosts/#supported-docker-versions
-# Info for 2.0: https://rancher.com/docs/rancher/v2.0/en/quick-start-guide/#host-and-node-requirements
+# Info for 2.x: https://rancher.com/docs/rancher/v2.0/en/quick-start-guide/#host-and-node-requirements
 curl https://releases.rancher.com/install-docker/17.03.sh | sh
 
 # Allow Docker access to user linux
@@ -17,7 +17,7 @@ systemctl enable docker
 
 # Disable Firewall
 # Info for 1.x: https://rancher.com/docs/rancher/latest/en/hosts/custom/#security-groupsfirewalls
-# Info for 2.0: https://rancher.com/docs/rancher/v2.0/en/quick-start-guide/#port-requirements
+# Info for 2.x: https://rancher.com/docs/rancher/v2.0/en/quick-start-guide/#port-requirements
 systemctl disable firewalld
 
 # Just to make sure everything is up to date
